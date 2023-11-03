@@ -1,0 +1,45 @@
+@use "../abstracts" as *;
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+.flex-shrink {
+	flex-shrink: 1;
+}
+
+@each $bp, $size in $base-breakpoints {
+	@include breakpoint($size) {
+		.#{bp}\:flex-row {
+			flex-direction: row;
+		}
+
+		.#{bp}\:flex-col {
+			flex-direction: column;
+		}
+
+		.#{bp}\:flex-wrap {
+			flex-wrap: wrap;
+		}
+
+		.#{bp}\:flex-grow {
+			flex-grow: 1;
+		}
+
+		.#{bp}\:flex-shrink {
+			flex-shrink: 1;
+		}
+	}
+}

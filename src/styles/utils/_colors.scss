@@ -1,0 +1,121 @@
+@use "../abstracts/" as *;
+
+@each $name, $color in $base-colors {
+	.bg-#{$name} {
+		background-color: $color;
+	}
+	.text-#{$name} {
+		color: $color;
+	}
+
+	.border-#{$name} {
+		border-color: $color;
+	}
+
+	.outline-#{$name} {
+		outline-color: $color;
+	}
+
+	// variations
+	@if (
+		$color !=
+			black and
+			$color !=
+			white and
+			$color !=
+			transparent
+	) {
+		@for $i from 1 through 9 {
+			.text-#{$name}-#{$i} {
+				color: mix(black, $color, $i * 10%);
+			}
+
+			.bg-#{$name}-#{$i} {
+				background-color: mix(
+					black,
+					$color,
+					$i * 10%
+				);
+			}
+
+			.border-#{$name}-#{$i} {
+				border-color: mix(black, $color, $i * 10%);
+			}
+
+			.outline-#{$name}-#{$i} {
+				outline-color: mix(black, $color, $i * 10%);
+			}
+		}
+	}
+
+	@each $state in $base-states {
+		.#{$state}\:bg-#{$name} {
+			&:#{$state} {
+				background-color: $color;
+			}
+		}
+		.#{$state}\:text-#{$name} {
+			&:#{$state} {
+				color: $color;
+			}
+		}
+
+		.#{$state}\:border-#{$name} {
+			border-color: $color;
+		}
+
+		.#{$state}\:outline-#{$name} {
+			&:#{$state} {
+				outline-color: $color;
+			}
+		}
+
+		// variations
+		@if (
+			$color !=
+				black and
+				$color !=
+				white and
+				$color !=
+				transparent
+		) {
+			@for $i from 1 through 9 {
+				.#{$state}\:text-#{$name}-#{$i} {
+					&:#{$state} {
+						color: mix(black, $color, $i * 10%);
+					}
+				}
+
+				.#{$state}\:bg-#{$name}-#{$i} {
+					&:#{$state} {
+						background-color: mix(
+							black,
+							$color,
+							$i * 10%
+						);
+					}
+				}
+
+				.#{$state}\:border-#{$name}-#{$i} {
+					&:#{$state} {
+						border-color: mix(
+							black,
+							$color,
+							$i * 10%
+						);
+					}
+				}
+
+				.#{$state}\:outline-#{$name}-#{$i} {
+					&:#{$state} {
+						outline-color: mix(
+							black,
+							$color,
+							$i * 10%
+						);
+					}
+				}
+			}
+		}
+	}
+}

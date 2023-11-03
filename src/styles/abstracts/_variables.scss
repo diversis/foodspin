@@ -1,0 +1,80 @@
+$base-padding: 0.5rem;
+$base-margin: 0.5rem;
+$base-gap: 0.5rem;
+$base-border: 1px;
+$base-outline: 1px;
+$base-border-radius: 0.5rem;
+
+$base-transition: 0.2s ease-in-out;
+$base-transition-delay: 0.2s;
+$base-transition-duration: 0.2s;
+$base-transition-property: all;
+$base-transition-timing-function: ease-in-out;
+$base-transition-transform: 0.2s ease-in-out;
+$base-transition-transform-delay: 0.2s;
+$base-transition-transform-duration: 0.2s;
+$base-transition-transform-property: all;
+$base-transition-transform-timing-function: ease-in-out;
+
+$base-directions: (
+	"simple": (
+		"r": "right",
+		"l": "left",
+		"t": "top",
+		"b": "bottom",
+	),
+	"complex": (
+		"tl": (
+			"top",
+			"left",
+		),
+		"tr": (
+			"top",
+			"right",
+		),
+		"bl": (
+			"bottom",
+			"left",
+		),
+		"br": (
+			"bottom",
+			"right",
+		),
+	),
+);
+$base-colors: (
+	"primary": #4cc5ed,
+	"secondary": #5735bd,
+	"success": #28a745,
+	"error": #dc3545,
+	"warning": #f0ba17,
+	"info": #1762b8,
+	"light": #fafafa,
+	"dark": #343a40,
+	"white": #fff,
+	"black": #000,
+	"text": #141414,
+	"red": red,
+	"green": green,
+	"blue": blue,
+	"yellow": yellow,
+	"orange": orange,
+	"purple": purple,
+	"pink": pink,
+	"gray": gray,
+	"transparent": transparent,
+);
+
+$base-breakpoints: (
+	"xs": 375px,
+	"sm": 640px,
+	"md": 768px,
+	"lg": 1024px,
+	"xl": 1280px,
+	"xxl": 1536px,
+);
+
+$base-states: "active", "hover", "focus", "disabled",
+	"visited", "checked", "focus-within", "focus-visible";
+
+$base-shadow: 0 0 0.5rem #{map-get($base-colors, "dark")};

@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+@each $prefix, $size in $font-sizes {
+	$font-size: $base-font-size * $size;
+	.font-#{$prefix} {
+		font-size: $font-size;
+		font-size: clamp(
+			$font-size,
+			$font-size * 0.95 + 0.25vw,
+			$font-size * 1.25
+		);
+	}
+}

@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+
+.container {
+	width: 100%;
+	padding-inline: $base-padding * 0.25;
+	@include xs {
+		max-width: map-get($base-breakpoints, "xs");
+		padding-inline: $base-padding * 0.5;
+	}
+	@include sm {
+		max-width: map-get($base-breakpoints, "sm");
+		padding-inline: $base-padding;
+	}
+	@include md {
+		max-width: map-get($base-breakpoints, "md");
+		padding-inline: $base-padding * 1.5;
+	}
+	@include lg {
+		max-width: map-get($base-breakpoints, "lg");
+		padding-inline: $base-padding * 2;
+	}
+	@include xl {
+		max-width: map-get($base-breakpoints, "xl");
+		padding-inline: $base-padding * 4;
+	}
+	@include xxl {
+		max-width: map-get($base-breakpoints, "xxl");
+		padding-inline: $base-padding * 6;
+	}
+}

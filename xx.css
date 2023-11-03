@@ -1,0 +1,405 @@
+body {
+	background-color: #fafafa;
+	color: #141414;
+	max-width: 100%;
+	min-height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+body,
+main {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-items: center;
+	position: relative;
+	width: 100%;
+}
+main {
+	margin-top: 3rem;
+}
+::-webkit-scrollbar {
+	width: min(0.5rem, 0.5vw);
+}
+::-webkit-scrollbar-track {
+	background-color: #5735bd;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #4cc5ed;
+	background-image: linear-gradient(
+		180deg,
+		#4cc5ed 0,
+		#f0ba17
+	);
+	border-radius: 9999px;
+}
+*,
+:after,
+:before {
+	box-sizing: border-box;
+}
+* {
+	color: inherit;
+	margin: 0;
+}
+:after,
+:before {
+	border-width: 0;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+body,
+html {
+	height: 100%;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+	text-rendering: optimizeSpeed;
+}
+html {
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	text-size-adjust: none;
+}
+html:focus-within {
+	scroll-behavior: smooth;
+}
+svg {
+	display: block;
+	max-width: 100%;
+}
+a {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+p {
+	overflow-wrap: break-word;
+}
+a:not([class]) {
+	-webkit-text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*,
+	:after,
+	:before {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+.container,
+.navbar {
+	padding-inline: 0.125rem;
+	width: 100%;
+}
+@media screen and (min-width: 375px) {
+	.container,
+	.navbar {
+		max-width: 375px;
+		padding-inline: 0.25rem;
+	}
+}
+@media screen and (min-width: 640px) {
+	.container,
+	.navbar {
+		max-width: 640px;
+		padding-inline: 0.5rem;
+	}
+}
+@media screen and (min-width: 768px) {
+	.container,
+	.navbar {
+		max-width: 768px;
+		padding-inline: 0.75rem;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.container,
+	.navbar {
+		max-width: 1024px;
+		padding-inline: 1rem;
+	}
+}
+@media screen and (min-width: 1280px) {
+	.container,
+	.navbar {
+		max-width: 1280px;
+		padding-inline: 2rem;
+	}
+}
+@media screen and (min-width: 1536px) {
+	.container,
+	.navbar {
+		max-width: 1536px;
+		padding-inline: 3rem;
+	}
+}
+.col-span-full {
+	grid-column: 1/-1;
+}
+.col-span-2 {
+	grid-column: span 2 / span 2;
+}
+.col-span-3 {
+	grid-column: span 3 / span 3;
+}
+.col-span-4 {
+	grid-column: span 4 / span 4;
+}
+.col-span-5 {
+	grid-column: span 5 / span 5;
+}
+.col-span-6 {
+	grid-column: span 6 / span 6;
+}
+.col-span-7 {
+	grid-column: span 7 / span 7;
+}
+.col-span-8 {
+	grid-column: span 8 / span 8;
+}
+.col-span-9 {
+	grid-column: span 9 / span 9;
+}
+.col-span-10 {
+	grid-column: span 10 / span 10;
+}
+.grid-cols-12 {
+	grid-template-columns: repeat(12, 1fr);
+}
+.col-span-12 {
+	grid-column: span 12 / span 12;
+}
+.flex-col {
+	flex-direction: column;
+}
+header {
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	background: transparent;
+	box-shadow: 0 0 0.5rem #343a40;
+	justify-content: center;
+	left: 0;
+	padding: 4px 1rem;
+	position: fixed;
+	top: 0;
+	transition: 0.2s ease-in-out;
+	z-index: 100;
+}
+.navbar,
+header {
+	align-items: center;
+	display: flex;
+	width: 100%;
+}
+.navbar {
+	justify-content: space-between;
+	position: relative;
+}
+.btn {
+	background-color: #fff;
+}
+.btn,
+.btn-primary {
+	border: 0;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	display: inline-block;
+	padding: 0.25rem 0.5rem;
+	text-decoration: none;
+}
+.btn-primary {
+	background-color: #4cc5ed;
+}
+.btn-secondary {
+	background-color: #5735bd;
+}
+.btn-error,
+.btn-secondary {
+	border: 0;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	display: inline-block;
+	padding: 0.25rem 0.5rem;
+	text-decoration: none;
+}
+.btn-error {
+	background-color: #dc3545;
+}
+.btn-info {
+	background-color: #1762b8;
+	border: 0;
+}
+.btn-info,
+.btn-outlined-orange {
+	border-radius: 0.5rem;
+	cursor: pointer;
+	display: inline-block;
+	padding: 0.25rem 0.5rem;
+	text-decoration: none;
+}
+.btn-outlined-orange {
+	background-color: transparent;
+	border: 1px solid orange;
+}
+.btn-purple {
+	background-color: purple;
+	border: 0;
+}
+.btn-outlined-purple,
+.btn-purple {
+	border-radius: 0.5rem;
+	cursor: pointer;
+	display: inline-block;
+	padding: 0.25rem 0.5rem;
+	text-decoration: none;
+}
+.btn-outlined-purple {
+	background-color: transparent;
+	border: 1px solid purple;
+}
+.p-1 {
+	padding: 0.5rem;
+}
+.mb-2 {
+	margin-bottom: 1rem;
+}
+.mt-4 {
+	margin-top: 3rem;
+}
+.mb-4 {
+	margin-bottom: 3rem;
+}
+.gap-2 {
+	gap: 1rem;
+}
+.border {
+	border: 1px solid;
+}
+.rounded {
+	border-radius: 0.5rem;
+}
+.grid {
+	display: grid;
+}
+.flex {
+	display: flex;
+}
+.bg-primary {
+	background-color: #4cc5ed;
+}
+.text-primary {
+	color: #4cc5ed;
+}
+.bg-primary-2 {
+	background-color: #3d9ebe;
+}
+.bg-primary-4 {
+	background-color: #2e768e;
+}
+.bg-primary-6 {
+	background-color: #1e4f5f;
+}
+.bg-primary-8 {
+	background-color: #0f272f;
+}
+.bg-secondary {
+	background-color: #5735bd;
+}
+.text-secondary {
+	color: #5735bd;
+}
+.bg-error {
+	background-color: #dc3545;
+}
+.text-error {
+	color: #dc3545;
+}
+.bg-info {
+	background-color: #1762b8;
+}
+.text-info {
+	color: #1762b8;
+}
+.text-white {
+	color: #fff;
+}
+.bg-red {
+	background-color: red;
+}
+.text-red {
+	color: red;
+}
+.bg-green {
+	background-color: green;
+}
+.text-green {
+	color: green;
+}
+.bg-blue {
+	background-color: blue;
+}
+.text-blue {
+	color: blue;
+}
+.bg-yellow {
+	background-color: #ff0;
+}
+.text-yellow {
+	color: #ff0;
+}
+.bg-orange {
+	background-color: orange;
+}
+.text-orange {
+	color: orange;
+}
+.text-orange-2 {
+	color: #cc8400;
+}
+.bg-purple {
+	background-color: purple;
+}
+.text-purple {
+	color: purple;
+}
+.bg-gray {
+	background-color: gray;
+}
+.text-gray {
+	color: gray;
+}
+.font-sm {
+	font-size: 0.75rem;
+	font-size: clamp(
+		0.75rem,
+		0.7125rem + 0.25vw,
+		0.9375rem
+	);
+}
+.font-lg {
+	font-size: 1.5rem;
+	font-size: clamp(1.5rem, 1.425rem + 0.25vw, 1.875rem);
+}
+.font-xl {
+	font-size: 2rem;
+	font-size: clamp(2rem, 1.9rem + 0.25vw, 2.5rem);
+}
+.font-xxl {
+	font-size: 4rem;
+	font-size: clamp(4rem, 3.8rem + 0.25vw, 5rem);
+}
+.items-center {
+	align-items: "center";
+}

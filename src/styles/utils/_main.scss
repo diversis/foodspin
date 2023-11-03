@@ -1,0 +1,193 @@
+@use "sass:math";
+@use "sass:map";
+@use "../abstracts/" as *;
+
+$utilities: (
+	"padding": (
+		"prefix": "p",
+		"values": (
+			"0": 0,
+			"1": $base-padding,
+			"2": $base-padding * 2,
+			"3": $base-padding * 4,
+			"4": $base-padding * 6,
+			"5": $base-padding * 8,
+		),
+		"directions": "simple",
+	),
+	"padding-inline": (
+		"prefix": "px",
+		"values": (
+			"0": 0,
+			"1": $base-padding,
+			"2": $base-padding * 2,
+			"3": $base-padding * 4,
+			"4": $base-padding * 6,
+			"5": $base-padding * 8,
+		),
+	),
+	"margin": (
+		"prefix": "m",
+		"values": (
+			"0": 0,
+			"1": $base-margin,
+			"2": $base-margin * 2,
+			"3": $base-margin * 4,
+			"4": $base-margin * 6,
+			"5": $base-margin * 8,
+		),
+		"directions": "simple",
+	),
+	"gap": (
+		"prefix": "gap",
+		"values": (
+			"0": 0,
+			"1": $base-gap,
+			"2": $base-gap * 2,
+			"3": $base-gap * 4,
+			"4": $base-gap * 6,
+			"5": $base-gap * 8,
+		),
+	),
+	"column-gap": (
+		"prefix": "gap-x",
+		"values": (
+			"0": 0,
+			"1": $base-gap,
+			"2": $base-gap * 2,
+			"3": $base-gap * 4,
+			"4": $base-gap * 6,
+			"5": $base-gap * 8,
+		),
+	),
+	"row-gap": (
+		"prefix": "gap-y",
+		"values": (
+			"0": 0,
+			"1": $base-gap,
+			"2": $base-gap * 2,
+			"3": $base-gap * 4,
+			"4": $base-gap * 6,
+			"5": $base-gap * 8,
+		),
+	),
+	"border": (
+		"prefix": "border",
+		"values": (
+			"default": $base-border solid,
+			"0": 0,
+			"2": $base-border * 2,
+			"3": $base-border * 4,
+			"4": $base-border * 6,
+			"5": $base-border * 8,
+			"solid": solid,
+			"dashed": dashed,
+			"dotted": dotted,
+			"double": double,
+			"groove": groove,
+		),
+		"directions": "simple",
+		"direction-separator": "-",
+	),
+	"outline": (
+		"prefix": "outline",
+		"values": (
+			"0": 0,
+			"1": $base-outline,
+			"2": $base-outline * 2,
+			"3": $base-outline * 4,
+			"4": $base-outline * 6,
+			"5": $base-outline * 8,
+		),
+	),
+	"opacity": (
+		"prefix": "o",
+		"values": (
+			"10": 0.1,
+			"20": 0.2,
+			"30": 0.3,
+			"40": 0.4,
+			"50": 0.5,
+			"60": 0.6,
+			"70": 0.7,
+			"80": 0.8,
+			"90": 0.9,
+			"100": 1,
+		),
+	),
+	"border-radius": (
+		"prefix": "rounded",
+		"values": (
+			"default": $base-border-radius,
+			"xs": math.div($base-border-radius, 4),
+			"sm": math.div($base-border-radius, 2),
+			"lg": $base-border-radius * 2,
+			"xl": $base-border-radius * 4,
+			"full": 9999px,
+			"circle": 50%,
+		),
+	),
+	"display": (
+		"prefix": null,
+		"values": (
+			"hidden": none,
+			"block": block,
+			"grid": grid,
+			"flex": flex,
+			"inline": inline,
+			"inline-block": inline-block,
+		),
+	),
+);
+
+//generate utility classes
+@each $prop, $map in $utilities {
+	$prefix: map-get($map, "prefix");
+	$values: map-get($map, "values");
+	$directions: map-get(
+		$base-directions,
+		map-get($map, "directions")
+	);
+	$direction-separator: map-get(
+		$map,
+		"direction-separator"
+	);
+
+	@each $k, $v in $values {
+		@if ($k == "default") {
+			.#{$prefix} {
+				#{$prop}: $v;
+			}
+			@if $directions {
+				@each $p, $direction in $directions {
+					.#{$prefix}#{$p} {
+						#{$prop}-#{$direction}: $v;
+					}
+				}
+			}
+		} @else {
+			@if $prefix==null {
+				.#{$k} {
+					#{$prop}: $v;
+				}
+			} @else {
+				.#{$prefix}-#{$k} {
+					#{$prop}: $v;
+				}
+				@if $directions {
+					@each $p, $direction in $directions {
+						@if $direction-separator {
+							.#{$prefix}#{$direction-separator}#{$p}-#{$k} {
+								#{$prop}-#{$direction}: $v;
+							}
+						} @else {
+							.#{$prefix}#{$p}-#{$k} {
+								#{$prop}-#{$direction}: $v;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

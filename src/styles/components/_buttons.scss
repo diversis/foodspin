@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+.btn {
+	@include btn;
+}
+
+@each $name, $color in $base-colors {
+	.btn-#{$name} {
+		@include btn($color);
+	}
+
+	.btn-outlined-#{$name} {
+		@include btn(transparent);
+		border: $base-border solid $color;
+	}
+}

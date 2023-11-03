@@ -1,0 +1,21 @@
+@use "./variables" as *;
+
+@mixin btn($bg-color: white) {
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	border: 1px solid transparent;
+	padding: $base-padding * 0.5 $base-padding;
+	border-radius: $base-border-radius;
+	background-color: $bg-color;
+	transition: $base-transition;
+	box-shadow: $base-shadow;
+	&:hover,
+	:focus-within {
+		background-color: mix(#fefefe50, $bg-color, 30%);
+		border-color: mix(#020304, $bg-color, 50%);
+	}
+	&:active {
+		transform: scale(0.95);
+	}
+}

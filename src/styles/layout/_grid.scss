@@ -1,0 +1,101 @@
+@use "sass:math";
+@use "../abstracts" as *;
+
+$grid-columns: 12;
+
+.grid-cols-1 {
+	grid-template-columns: 1fr;
+}
+
+.grid-rows-1 {
+	grid-template-rows: 1fr;
+}
+
+.row-span-full {
+	grid-row: 1 / -1;
+}
+
+.col-span-full {
+	grid-column: 1 / -1;
+}
+
+@for $i from 2 through $grid-columns {
+	.grid-cols-#{$i} {
+		grid-template-columns: repeat(#{$i}, 1fr);
+	}
+	.grid-rows-#{$i} {
+		grid-template-rows: repeat(#{$i}, 1fr);
+	}
+
+	.col-span-#{$i} {
+		grid-column: span #{$i} / span #{$i};
+	}
+	.row-span-#{$i} {
+		grid-row: span #{$i} / span #{$i};
+	}
+}
+
+@each $bp, $size in $base-breakpoints {
+	@include breakpoint($size) {
+		.#{$bp}\:grid-cols-1 {
+			grid-template-columns: 1fr;
+		}
+
+		.#{$bp}\:grid-rows-1 {
+			grid-template-rows: 1fr;
+		}
+		.#{$bp}\:grid-cols-1 {
+			grid-template-columns: 1fr;
+		}
+
+		.#{$bp}\:grid-rows-1 {
+			grid-template-rows: 1fr;
+		}
+
+		.#{$bp}\:row-span-auto {
+			grid-row: auto;
+		}
+
+		.#{$bp}\:col-span-auto {
+			grid-column: auto;
+		}
+
+		.#{$bp}\:row-span-full {
+			grid-row: 1 / -1;
+		}
+
+		.#{$bp}\:col-span-full {
+			grid-column: 1 / -1;
+		}
+
+		@for $i from 2 through $grid-columns {
+			.#{$bp}\:grid-cols-#{$i} {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+			.#{$bp}\:grid-rows-#{$i} {
+				grid-template-rows: repeat(#{$i}, 1fr);
+			}
+
+			.#{$bp}\:col-span-#{$i} {
+				grid-column: span #{$i} / span #{$i};
+			}
+			.#{$bp}\:row-span-#{$i} {
+				grid-row: span #{$i} / span #{$i};
+			}
+
+			.#{$bp}\:col-start-#{$i} {
+				grid-column-start: #{$i};
+			}
+			.#{$bp}\:row-start-#{$i} {
+				grid-row-start: #{$i};
+			}
+
+			.#{$bp}\:col-end-#{$i} {
+				grid-column-end: #{$i};
+			}
+			.#{$bp}\:row-end-#{$i} {
+				grid-row-end: #{$i};
+			}
+		}
+	}
+}
