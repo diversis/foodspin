@@ -13,6 +13,7 @@ body {
 	font-family: $base-font-family;
 	color: map-get($base-colors, "text");
 	background-color: map-get($base-colors, "light");
+	text-align: $base-text-align;
 }
 
 main {

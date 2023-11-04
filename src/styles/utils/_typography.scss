@@ -1,0 +1,20 @@
+@use "../abstracts/" as *;
+
+$text-transform-vars: (
+	"capitalize": capitalize,
+	"uppercase": uppercase,
+	"lowercase": lowercase,
+	"none": none,
+);
+
+@each $key, $value in $text-transform-vars {
+	.text-#{$key} {
+		text-transform: $value;
+	}
+}
+
+@each $key, $value in map-get($base-directions, "simple") {
+	.text-#{$key} {
+		text-align: $value;
+	}
+}

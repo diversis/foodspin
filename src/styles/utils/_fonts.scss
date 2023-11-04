@@ -2,12 +2,29 @@
 
 @each $prefix, $size in $font-sizes {
 	$font-size: $base-font-size * $size;
-	.font-#{$prefix} {
+	.text-#{$prefix} {
 		font-size: $font-size;
 		font-size: clamp(
 			$font-size,
 			$font-size * 0.95 + 0.25vw,
 			$font-size * 1.25
 		);
+	}
+}
+
+@each $prefix, $size in $heading-sizes {
+	.text-#{$prefix} {
+		font-size: $size;
+		font-size: clamp(
+			$size * 0.85,
+			$size * 0.95 + 0.25vw,
+			$size
+		);
+	}
+}
+
+@for $i from 1 through 9 {
+	.font-#{$i}00 {
+		font-weight: #{$i}00;
 	}
 }

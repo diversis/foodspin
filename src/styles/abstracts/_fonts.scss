@@ -10,54 +10,6 @@ $base-font-size: 0.875rem;
 $base-line-height: 1.5;
 $base-letter-spacing: 0;
 $base-text-align: left;
-$base-text-decoration: none;
-$base-text-transform: none;
-$base-text-indent: 0;
-$base-text-overflow: ellipsis;
-$base-text-shadow: none;
-$base-text-vertical-align: baseline;
-$base-text-white-space: normal;
-$base-text-word-break: break-word;
-$base-text-word-wrap: break-word;
-$base-text-line-height: 1.5;
-
-$base-font-family-headings: $base-font-family;
-$base-font-weight-headings: 500;
-$base-font-style-headings: normal;
-$base-font-color-headings: #333;
-$base-font-size-headings: 1.125rem;
-$base-line-height-headings: 1.5;
-$base-letter-spacing-headings: 0;
-$base-text-align-headings: left;
-$base-text-decoration-headings: none;
-$base-text-transform-headings: none;
-$base-text-indent-headings: 0;
-$base-text-overflow-headings: ellipsis;
-$base-text-shadow-headings: none;
-$base-text-vertical-align-headings: baseline;
-$base-text-white-space-headings: normal;
-$base-text-word-break-headings: break-word;
-$base-text-word-wrap-headings: break-word;
-$base-text-line-height-headings: 1.25;
-
-$base-font-family-mono: $base-font-family;
-$base-font-weight-mono: 500;
-$base-font-style-mono: normal;
-$base-font-color-mono: #333;
-$base-font-size-mono: 0.875rem;
-$base-line-height-mono: 1.5;
-$base-letter-spacing-mono: 0;
-$base-text-align-mono: left;
-$base-text-decoration-mono: none;
-$base-text-transform-mono: none;
-$base-text-indent-mono: 0;
-$base-text-overflow-mono: ellipsis;
-$base-text-shadow-mono: none;
-$base-text-vertical-align-mono: baseline;
-$base-text-white-space-mono: normal;
-$base-text-word-break-mono: break-word;
-$base-text-word-wrap-mono: break-word;
-$base-text-line-height-mono: 1.5;
 
 $font-sizes: (
 	"xs": 0.725,
@@ -65,5 +17,11 @@ $font-sizes: (
 	"base": 1,
 	"lg": 1.28571,
 	"xl": 1.5,
-	"xxl": 2,
+	"xxl": 3.142857,
+);
+
+$heading-sizes: (
+	"h1": 44px,
+	"h2": 36px,
+	"h3": 18px,
 );
