@@ -3,6 +3,16 @@
 @use "../abstracts/" as *;
 
 $utilities: (
+	"position": (
+		"prefix": "position",
+		"values": (
+			"relative": relative,
+			"absolute": absolute,
+			"fixed": fixed,
+			"sticky": sticky,
+			"static": static,
+		),
+	),
 	"padding": (
 		"prefix": "p",
 		"values": (

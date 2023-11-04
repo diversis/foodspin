@@ -19,3 +19,18 @@
 		transform: scale(0.95);
 	}
 }
+
+@mixin badge($bg-color: transparent) {
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		display: inline-block;
+		right: -1px;
+		bottom: -1px;
+		background-color: $bg-color;
+		border-radius: 9999px;
+		width: 6px;
+		height: 6px;
+	}
+}

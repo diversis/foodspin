@@ -2,19 +2,20 @@
 const config = {
 	plugins: [
 		require("autoprefixer"),
+
+		// require("@fullhuman/postcss-purgecss")({
+		// 	content: ["*.html"],
+		// 	extractors: [
+		// 		{
+		// 			extractor: (content) =>
+		// 				content.match(/[\w-/:]+(?<!:)/g) ||
+		// 				[],
+		// 			extensions: ["html"],
+		// 		},
+		// 	],
+		// 	whitelist: ["html", "body", "hidden"],
+		// }),
 		require("postcss-normalize"),
-		require("@fullhuman/postcss-purgecss")({
-			content: ["*.html"],
-			extractors: [
-				{
-					extractor: (content) =>
-						content.match(/[\w-/:]+(?<!:)/g) ||
-						[],
-					extensions: ["html"],
-				},
-			],
-			whitelist: ["html", "body", "hidden"],
-		}),
 		require("cssnano")({ preset: "default" }),
 	],
 };

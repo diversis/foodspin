@@ -1,13 +1,13 @@
 @use "../abstracts" as *;
 
-header {
+footer {
 	display: flex;
 	width: 100%;
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	padding-top: 3rem;
 	height: min-content;
+	padding-bottom: 1.75rem;
 	background: transparent;
 	z-index: 100;
 }

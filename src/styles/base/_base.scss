@@ -7,9 +7,10 @@ body {
 	max-width: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
-	display: grid;
-	grid-template-columns: 1fr;
-	justify-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-items: space-between;
+	font-family: $base-font-family;
 	color: map-get($base-colors, "text");
 	background-color: map-get($base-colors, "light");
 }
@@ -42,4 +43,11 @@ main {
 		map-get($base-colors, "warning") 100%
 	);
 	border-radius: 9999px;
+}
+/* purgecss ignore */
+a {
+	transition: $base-transition;
+	&:is(:hover, :focus-within) {
+		color: map-get($base-colors, "primary");
+	}
 }

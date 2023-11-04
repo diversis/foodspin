@@ -4,7 +4,10 @@
 	@extend .container;
 	position: relative;
 	display: flex;
-	width: 100%;
 	align-items: center;
 	justify-content: space-between;
+	& ul {
+		height: min-content;
+		margin-left: 13.28vw;
+	}
 }

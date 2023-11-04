@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+.badge {
+	@include badge;
+}
+
+@each $name, $color in $base-colors {
+	.badge-#{$name} {
+		@include badge($color);
+	}
+}
