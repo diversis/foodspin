@@ -4,81 +4,13 @@
 
 $utilities: (
 	"position": (
-		"prefix": "position",
+		"prefix": "",
 		"values": (
 			"relative": relative,
 			"absolute": absolute,
 			"fixed": fixed,
 			"sticky": sticky,
 			"static": static,
-		),
-	),
-	"padding": (
-		"prefix": "p",
-		"values": (
-			"0": 0,
-			"1": $base-padding,
-			"2": $base-padding * 2,
-			"3": $base-padding * 4,
-			"4": $base-padding * 6,
-			"5": $base-padding * 8,
-		),
-		"directions": "simple",
-	),
-	"padding-inline": (
-		"prefix": "px",
-		"values": (
-			"0": 0,
-			"1": $base-padding,
-			"2": $base-padding * 2,
-			"3": $base-padding * 4,
-			"4": $base-padding * 6,
-			"5": $base-padding * 8,
-		),
-	),
-	"margin": (
-		"prefix": "m",
-		"values": (
-			"0": 0,
-			"1": $base-margin,
-			"2": $base-margin * 2,
-			"3": $base-margin * 4,
-			"4": $base-margin * 6,
-			"5": $base-margin * 8,
-		),
-		"directions": "simple",
-	),
-	"gap": (
-		"prefix": "gap",
-		"values": (
-			"0": 0,
-			"1": $base-gap,
-			"2": $base-gap * 2,
-			"3": $base-gap * 4,
-			"4": $base-gap * 6,
-			"5": $base-gap * 8,
-		),
-	),
-	"column-gap": (
-		"prefix": "gap-x",
-		"values": (
-			"0": 0,
-			"1": $base-gap,
-			"2": $base-gap * 2,
-			"3": $base-gap * 4,
-			"4": $base-gap * 6,
-			"5": $base-gap * 8,
-		),
-	),
-	"row-gap": (
-		"prefix": "gap-y",
-		"values": (
-			"0": 0,
-			"1": $base-gap,
-			"2": $base-gap * 2,
-			"3": $base-gap * 4,
-			"4": $base-gap * 6,
-			"5": $base-gap * 8,
 		),
 	),
 	"border": (
@@ -195,6 +127,99 @@ $utilities: (
 								#{$prop}-#{$direction}: $v;
 							}
 						}
+					}
+				}
+			}
+		}
+	}
+}
+
+$layout-utils: (
+	"padding": (
+		"prefix": "p",
+		"value": $base-padding,
+		"directions": "simple",
+	),
+	"padding-inline": (
+		"prefix": "px",
+		"value": $base-padding,
+	),
+	"margin": (
+		"prefix": "m",
+		"value": $base-margin,
+		"directions": "simple",
+	),
+	"gap": (
+		"prefix": "gap",
+		"value": $base-gap,
+	),
+	"column-gap": (
+		"prefix": "gap-x",
+		"value": $base-gap,
+	),
+	"row-gap": (
+		"prefix": "gap-y",
+		"value": $base-gap,
+	),
+);
+
+@each $prop, $map in $layout-utils {
+	$prefix: map-get($map, "prefix");
+	$base-value: map-get($map, "value");
+	$directions: map-get(
+		$base-directions,
+		map-get($map, "directions")
+	);
+
+	@for $i from 0 through 40 {
+		@if $i < 10 {
+			.#{$prefix}-#{$i} {
+				#{$prop}: $base-value * $i;
+			}
+			@if $directions {
+				@each $p, $direction in $directions {
+					.#{$prefix}#{$p}-#{$i} {
+						#{$prop}-#{$direction}: $base-value *
+							$i;
+					}
+				}
+			}
+		} @else if $i<20 {
+			.#{$prefix}-#{$i} {
+				#{$prop}: $base-value * $i * 2;
+			}
+			@if $directions {
+				@each $p, $direction in $directions {
+					.#{$prefix}#{$p}-#{$i} {
+						#{$prop}-#{$direction}: $base-value *
+							$i *
+							2;
+					}
+				}
+			}
+		} @else if $i<30 {
+			.#{$prefix}-#{$i} {
+				#{$prop}: $base-value * $i * 4;
+			}
+			@if $directions {
+				@each $p, $direction in $directions {
+					.#{$prefix}#{$p}-#{$i} {
+						#{$prop}-#{$direction}: $base-value *
+							$i *
+							4;
+					}
+				}
+			}
+		} @else {
+			.#{$prefix}-#{$i} {
+				#{$prop}: $base-value * $i * 6;
+			}
+			@if $directions {
+				@each $p, $direction in $directions {
+					.#{$prefix}#{$p}-#{$i} {
+						#{$prop}-#{$direction}: $base-value *
+							$i *
+							6;
 					}
 				}
 			}

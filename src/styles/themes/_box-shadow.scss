@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+@each $theme, $shadow in $box-shadow {
+	.shadow-#{$theme} {
+		box-shadow: $shadow;
+	}
+}

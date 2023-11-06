@@ -1,10 +1,12 @@
-$base-padding: 0.5rem;
+$base-padding: 14px;
 $base-container-padding: 25px;
-$base-margin: 0.5rem;
+$base-margin: 0.25rem;
 $base-gap: 0.5rem;
 $base-border: 1px;
 $base-outline: 1px;
 $base-border-radius: 0.5rem;
+$base-heading-leading: 1.3889;
+$base-leading: 1.5;
 
 $base-transition: 0.2s ease-in-out;
 $base-transition-delay: 0.2s;
@@ -50,8 +52,11 @@ $base-colors: (
 	"error": #dc3545,
 	"warning": #f0ba17,
 	"info": #1762b8,
-	"primary-light": #f4e2d1,
-	"secondary-light": #dbf4d1,
+	"primary-light": #EAFFE2,
+	"secondary-light": #ffeede,
+	"primary-btn-light": #f4e2d1,
+	"secondary-btn-light": #dbf4d1,
+	"light": #ffeede,
 	"dark": #333,
 	"white": #fff,
 	"black": #000,
@@ -71,3 +76,8 @@ $base-states: "active", "hover", "focus", "disabled",
 	"visited", "checked", "focus-within", "focus-visible";
 
 $base-shadow: 0 0 0.5rem #{map-get($base-colors, "dark")};
+
+$box-shadow: (
+	"primary": 0px 20px 40px 0px #f4e2d1,
+	"secondary": 0px 20px 40px 0px #dbf4d1,
+);

@@ -1,57 +1,139 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>FoodSpin practice</title>
+	</head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FoodSpin practice</title>
-</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<div class="flex items-center">
+					<p class="text-h3 font-500">FoodSpin</p>
+					<ul
+						class="flex gap-2"
+						role="list"
+						class="flex">
+						<li><a href="#">Breakfast</a></li>
+						<li><a href="#">Lunch</a></li>
+						<li><a href="#">Dinner</a></li>
+					</ul>
+				</div>
+				<div class="badge-primary">
+					<svg
+						width="18"
+						height="21">
+						<use href="#cart"></use>
+					</svg>
+				</div>
+			</nav>
+		</header>
+		<main class="flex-grow">
+			<section class="container spin-container grid">
+				<div class="grid grid-product">
+					<article class="grid content-product">
+						<p
+							class="text-primary text-h1 font-600">
+							$32
+						</p>
+						<h2 class="text-h2 leading-h">
+							Green Goddess Chicken Salad
+						</h2>
+						<p class="text-capitalize mt-3">
+							It is a non vegetarian salad
+							which consists of the green
+							goddess dressing mixed with
+							chicken, peppers, olives and
+							celery.
+						</p>
+					</article>
+					<div class="spin-bg"></div>
+					<div class="spin-variants"></div>
+					<div
+						class="content-spin relative"></div>
+					<div class="content-order mt-7">
+						<button
+							type="button"
+							class="btn-primary btn-order shadow-primary">
+							order now
+						</button>
+					</div>
+					<picture class="product-picture"
+						><img
+							alt="Green Goddess Chicken Salad"
+							src="/image_9.3.png"
+					/></picture>
 
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="flex items-center">
-        <p class="text-h3 font-500">FoodSpin</p>
-        <ul class="flex gap-2" role="list" class="flex">
-          <li><a href="#">Breakfast</a></li>
-          <li><a href="#">Lunch</a></li>
-          <li><a href="#">Dinner</a></li>
-        </ul>
-      </div>
-      <div class="badge-primary"><svg width="18" height="21">
-          <use href="#cart"></use>
-        </svg>
-      </div>
-    </nav>
-
-  </header>
-  <main class="flex-grow">
-    <div class="container">
-      <div class="grid grid-cols-12">
-        <div class="col-span-4">
-          <p class="text-primary text-h1 font-600 ">$32</p>
-          <h2 class="text-h2">Green Goddess Chicken Salad</h2>
-          <p class="text-capitalize">It is a non vegetarian salad which consists of the green goddess dressing mixed
-            with chicken, peppers,
-            olives and celery. </p>
-        </div>
-        <div class="col-span-8"></div>
-      </div>
-    </div>
-
-  </main>
-  <footer> <a class="hover:text-info-2" target="_blank" href="https://github.com/diversis">diversis</a></footer>
-  <script type="module" src="./main.js"></script>
-  <svg xmlns="http://www.w3.org/2000/svg" class="hidden" viewBox="0 0 18 21" fill="none">
-    <defs>
-
-      <path id="cart"
-        d="M4 7V5C4 3.67392 4.52678 2.40215 5.46447 1.46447C6.40215 0.526784 7.67392 0 9 0C10.3261 0 11.5979 0.526784 12.5355 1.46447C13.4732 2.40215 14 3.67392 14 5V7H17C17.2652 7 17.5196 7.10536 17.7071 7.29289C17.8946 7.48043 18 7.73478 18 8V20C18 20.2652 17.8946 20.5196 17.7071 20.7071C17.5196 20.8946 17.2652 21 17 21H1C0.734784 21 0.48043 20.8946 0.292893 20.7071C0.105357 20.5196 0 20.2652 0 20V8C0 7.73478 0.105357 7.48043 0.292893 7.29289C0.48043 7.10536 0.734784 7 1 7H4ZM4 9H2V19H16V9H14V11H12V9H6V11H4V9ZM6 7H12V5C12 4.20435 11.6839 3.44129 11.1213 2.87868C10.5587 2.31607 9.79565 2 9 2C8.20435 2 7.44129 2.31607 6.87868 2.87868C6.31607 3.44129 6 4.20435 6 5V7Z"
-        fill="#090909" />
-    </defs>
-  </svg>
-
-</body>
-
+					<div class="spin-nav">
+						<button
+							class="btn-round-primary btn-round-icon">
+							<svg
+								width="12"
+								height="12"
+								viewBox="0 0 14 14"
+								preserveAspectRatio="xMinYMin">
+								<use
+									href="#arrow-down"></use>
+							</svg>
+						</button>
+						<button
+							class="btn-round-primary btn-round-icon">
+							<svg
+								width="12"
+								height="12"
+								viewBox="0 0 14 14"
+								preserveAspectRatio="xMinYMin">
+								<use
+									href="#arrow-down"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<a
+				class="hover:text-info-2"
+				target="_blank"
+				href="https://github.com/diversis"
+				>diversis</a
+			>
+		</footer>
+		<script
+			type="module"
+			src="./main.js"></script>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			class="hidden"
+			fill="none">
+			<defs>
+				<path
+					id="cart"
+					d="M4 7V5C4 3.67392 4.52678 2.40215 5.46447 1.46447C6.40215 0.526784 7.67392 0 9 0C10.3261 0 11.5979 0.526784 12.5355 1.46447C13.4732 2.40215 14 3.67392 14 5V7H17C17.2652 7 17.5196 7.10536 17.7071 7.29289C17.8946 7.48043 18 7.73478 18 8V20C18 20.2652 17.8946 20.5196 17.7071 20.7071C17.5196 20.8946 17.2652 21 17 21H1C0.734784 21 0.48043 20.8946 0.292893 20.7071C0.105357 20.5196 0 20.2652 0 20V8C0 7.73478 0.105357 7.48043 0.292893 7.29289C0.48043 7.10536 0.734784 7 1 7H4ZM4 9H2V19H16V9H14V11H12V9H6V11H4V9ZM6 7H12V5C12 4.20435 11.6839 3.44129 11.1213 2.87868C10.5587 2.31607 9.79565 2 9 2C8.20435 2 7.44129 2.31607 6.87868 2.87868C6.31607 3.44129 6 4.20435 6 5V7Z"
+					fill="#090909" />
+			</defs>
+		</svg>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			class="hidden"
+			viewBox="0 0 14 14"
+			fill="none">
+			<defs>
+				<path
+					id="arrow-down"
+					d="M7 13L13 7M7 13L1 7M7 13V1"
+					stroke="white"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round" />
+			</defs>
+		</svg>
+	</body>
 </html>

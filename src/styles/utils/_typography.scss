@@ -18,3 +18,10 @@ $text-transform-vars: (
 		text-align: $value;
 	}
 }
+
+.leading-normal {
+	line-height: $base-leading;
+}
+.leading-h {
+	line-height: $base-heading-leading;
+}

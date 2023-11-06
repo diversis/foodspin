@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+.spin-bg {
+	grid-area: 1/6/2/13;
+	position: relative;
+	width: 100%;
+	&::after {
+		position: absolute;
+		content: "";
+		width: 187.3%;
+		height: auto;
+		aspect-ratio: 1/1;
+		bottom: 0;
+		left: -43.65%;
+		z-index: -1;
+
+		background-color: map-get($base-colors, "light");
+		border-radius: 50%;
+	}
+}
+
+.spin-nav {
+	grid-area: 3/6/4/13;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 40px;
+}

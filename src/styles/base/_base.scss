@@ -12,8 +12,11 @@ body {
 	justify-items: space-between;
 	font-family: $base-font-family;
 	color: map-get($base-colors, "text");
-	background-color: map-get($base-colors, "light");
+	background-color: map-get($base-colors, "white");
 	text-align: $base-text-align;
+	line-height: 1.5;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 main {

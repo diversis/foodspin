@@ -1,15 +1,45 @@
 @use "../abstracts" as *;
 .btn {
 	@include btn;
+	@include btn-state;
+}
+
+.btn-round {
+	@include btn-round;
+	@include btn-state;
 }
 
 @each $name, $color in $base-colors {
 	.btn-#{$name} {
 		@include btn($color);
+		@include btn-state($color);
 	}
 
 	.btn-outlined-#{$name} {
 		@include btn(transparent);
+		@include btn-state($color);
 		border: $base-border solid $color;
 	}
+	.btn-round-#{$name} {
+		@include btn-round($color);
+		@include btn-state($color);
+	}
+
+	.btn-round-outlined-#{$name} {
+		@include btn-round(transparent);
+		@include btn-state($color);
+		border: $base-border solid $color;
+	}
+}
+
+.btn-order {
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+}
+
+.btn-round-icon {
+	display: grid;
+	place-items: center;
+	width: 40px;
 }

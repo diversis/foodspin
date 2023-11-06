@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+.content-product {
+	grid-area: 1/1/2/5;
+}
+.content-spin {
+	grid-area: 1/6/4/13;
+}
+
+.content-order {
+	grid-area: 2/1/3/5;
+}
+
+.product-picture {
+	grid-area: 1/6/4/13;
+	justify-self: center;
+	align-self: flex-end;
+	display: grid;
+	place-items: center;
+	aspect-ratio: 1/1;
+	width: fit-content;
+	max-width: 280px;
+	height: auto;
+	max-height: 280px;
+	& > img {
+		border-radius: 50%;
+	}
+}
