@@ -20,64 +20,72 @@ $base-transition-transform-property: all;
 $base-transition-transform-timing-function: ease-in-out;
 
 $base-directions: (
-	"simple": (
-		"r": "right",
-		"l": "left",
-		"t": "top",
-		"b": "bottom",
-	),
-	"complex": (
-		"tl": (
-			"top",
-			"left",
-		),
-		"tr": (
-			"top",
-			"right",
-		),
-		"bl": (
-			"bottom",
-			"left",
-		),
-		"br": (
-			"bottom",
-			"right",
-		),
-	),
+    "simple": (
+        "r": "right",
+        "l": "left",
+        "t": "top",
+        "b": "bottom",
+    ),
+    "complex": (
+        "tl": (
+            "top",
+            "left",
+        ),
+        "tr": (
+            "top",
+            "right",
+        ),
+        "bl": (
+            "bottom",
+            "left",
+        ),
+        "br": (
+            "bottom",
+            "right",
+        ),
+    ),
 );
 $base-colors: (
-	"primary": #ff922c,
-	"secondary": #54bf29,
-	"success": #28a745,
-	"error": #dc3545,
-	"warning": #f0ba17,
-	"info": #1762b8,
-	"primary-light": #EAFFE2,
-	"secondary-light": #ffeede,
-	"primary-btn-light": #f4e2d1,
-	"secondary-btn-light": #dbf4d1,
-	"light": #ffeede,
-	"dark": #333,
-	"white": #fff,
-	"black": #000,
-	"transparent": transparent,
+    "primary": #ff922c,
+    "secondary": #54bf29,
+    "success": #28a745,
+    "error": #dc3545,
+    "warning": #f0ba17,
+    "info": #1762b8,
+    "primary-light": #eaffe2,
+    "secondary-light": #ffeede,
+    "primary-btn-light": #f4e2d1,
+    "secondary-btn-light": #dbf4d1,
+    "light": #ffeede,
+    "dark": #333,
+    "white": #fff,
+    "black": #000,
+    "transparent": transparent,
 );
 
 $base-breakpoints: (
-	"xs": 375px,
-	"sm": 640px,
-	"md": 768px,
-	"lg": 1024px,
-	"xl": 1280px,
-	"xxl": 1536px,
+    "xs": 375px,
+    "sm": 640px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1280px,
+    "xxl": 1536px,
 );
 
 $base-states: "active", "hover", "focus", "disabled",
-	"visited", "checked", "focus-within", "focus-visible";
+    "visited", "checked", "focus-within", "focus-visible";
 
 $base-shadow: 0 0 0.5rem #{map-get($base-colors, "dark")};
 
 $box-shadow: (
-	"primary": 0px 20px 40px 0px #f4e2d1,
-	"secondary": 0px 20px 40px 0px #dbf4d1,
+    "primary": 0px 20px 40px 0px #f4e2d1,
+    "secondary": 0px 20px 40px 0px #dbf4d1,
 );
+
+// $shadow-round: 0px 20px 40px 20px #00000011;
+
+$shadow-round: 0px 6.3px 15.3px 3px rgba(0, 0, 0, 0.044),
+    0px 14.2px 29.3px 6px rgba(0, 0, 0, 0.066),
+    0px 20px 40px 10px rgba(0, 0, 0, 0.11);
+
+$clr-spin-border-primary: #e87f1e;

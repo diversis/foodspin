@@ -102,8 +102,9 @@ $grid-columns: 12;
 
 .grid-product {
 	grid-area: 1/1;
-	grid-template-columns: auto minmax(0, 1fr);
+	grid-template-columns: 33.98% minmax(0, 1fr);
 	grid-template-rows: 1fr auto auto minmax(0, 1fr);
+	column-gap: 12.13%;
 	&:nth-child(odd) {
 		--theme-color: #{map-get($base-colors, "primary")};
 	}

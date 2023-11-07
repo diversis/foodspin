@@ -1,29 +1,98 @@
 @use "../abstracts" as *;
+@use "sass:math";
 
 .spin-bg {
-	grid-area: 1/6/2/13;
-	position: relative;
-	width: 100%;
-	&::after {
-		position: absolute;
-		content: "";
-		width: 187.3%;
-		height: auto;
-		aspect-ratio: 1/1;
-		bottom: 0;
-		left: -43.65%;
-		z-index: -1;
+    position: absolute;
 
-		background-color: map-get($base-colors, "light");
-		border-radius: 50%;
-	}
+    height: auto;
+    aspect-ratio: 1/1;
+    bottom: 0;
+    inset-inline: -50%;
+    z-index: -1;
+    overflow: hidden;
+    background-color: map-get($base-colors, "light");
+    border-radius: 50%;
+    display: grid;
+    justify-items: center;
 }
 
 .spin-nav {
-	grid-area: 3/6/4/13;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 40px;
+    grid-area: 3/2/4/3;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.spin-carousel-wrapper {
+    grid-area: 1/2/2/3;
+    position: relative;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+}
+
+.spin-variants {
+    display: grid;
+    grid-template-areas: "circle";
+    position: absolute;
+    width: 55%;
+    place-items: center;
+    bottom: -25%;
+    aspect-ratio: 1/1;
+    &::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        aspect-ratio: 1/1;
+        bottom: 25%;
+        border-radius: 50%;
+        border: 2px dashed $clr-spin-border-primary;
+        z-index: -1;
+    }
+
+    & picture {
+        border-radius: 50%;
+
+        // box-shadow: map-get($box-shadow, "round");
+    }
+    & img {
+        border-radius: 50%;
+    }
+
+    & li {
+        position: absolute;
+        aspect-ratio: 1/1;
+        width: math.div(100%, 6.6);
+        border-radius: 50%;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            content: "";
+            inset: 0;
+            border-radius: 50%;
+            box-shadow: $shadow-round;
+            z-index: -1;
+            background-blend-mode: overlay;
+        }
+
+        @for $i from 1 through 9 {
+            $d: math.div($i, 9);
+            $offset: -130deg;
+            $r-amount: 1turn;
+            $r: $r-amount * $d + $offset;
+            &:nth-child(#{$i}) {
+                transform: rotateZ($r)
+                    translate(330%)
+                    rotate(-1 * $r);
+                @if $i > 1 {
+                    & picture {
+                        transform: rotateZ($i * 40deg);
+                    }
+                }
+            }
+        }
+    }
 }
