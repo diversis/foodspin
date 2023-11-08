@@ -5,22 +5,22 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 /*
     2. Remove default margin
   */
 * {
-	color: inherit;
-	margin: 0;
+    color: inherit;
+    margin: 0;
 }
 // remove iteractions for pseudo-elements
 
 *::before,
 *::after {
-	border-width: 0;
-	pointer-events: none;
-	user-select: none;
+    border-width: 0;
+    pointer-events: none;
+    user-select: none;
 }
 
 /*
@@ -28,7 +28,7 @@
   */
 html,
 body {
-	height: 100%;
+    height: 100%;
 }
 /*
     Typographic tweaks!
@@ -36,19 +36,19 @@ body {
     5. Improve text rendering
   */
 body {
-	line-height: 1.5;
-	text-rendering: optimizeSpeed;
-	-webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Set core root defaults */
 html {
-	-webkit-text-size-adjust: none; /* for iOS Safari */
-	text-size-adjust: none; /* for other mobile browsers */
+    -webkit-text-size-adjust: none; /* for iOS Safari */
+    text-size-adjust: none; /* for other mobile browsers */
 
-	&:focus-within {
-		scroll-behavior: smooth;
-	}
+    &:focus-within {
+        scroll-behavior: smooth;
+    }
 }
 
 /*
@@ -60,8 +60,13 @@ video,
 canvas,
 svg,
 use {
-	display: block;
-	max-width: 100%;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 0.75rem;
 }
 /*
     7. Remove built-in form typography styles
@@ -70,17 +75,17 @@ input,
 button,
 textarea,
 select {
-	font: inherit;
+    font: inherit;
 }
 
 button,
 fieldset,
 input {
-	all: unset;
+    all: unset;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 /*
     8. Avoid text overflows
@@ -92,41 +97,41 @@ h3,
 h4,
 h5,
 h6 {
-	overflow-wrap: break-word;
+    overflow-wrap: break-word;
 }
 /*
     9. Create a root stacking context
   */
 #root {
-	isolation: isolate;
+    isolation: isolate;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
-	list-style: none;
-	padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-	text-decoration-skip-ink: auto;
+    text-decoration-skip-ink: auto;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
+    html:focus-within {
+        scroll-behavior: auto;
+    }
 
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* Add pointer cursors to interactive elements  */
@@ -137,10 +142,10 @@ summary:not([disabled]),
 [type="radio"]:not([disabled]),
 [type="submit"]:not([disabled]),
 [type="checkbox"]:not([disabled]) {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 [disabled] {
-	cursor: not-allowed;
+    cursor: not-allowed;
 }
 /* purgecss end ignore */

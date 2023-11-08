@@ -75,13 +75,12 @@ export function setupNavigation(productGrid) {
     };
 
     const changeDisplay = ({ currentId, prevId }) => {
-        // console.log(currentId);
         // TODO proper query based on id
         const picsToRemove =
             productDisplay.querySelectorAll(
                 `#product-display-${prevId}`,
             );
-        // console.log(picToRemove);
+
         if (picsToRemove && picsToRemove.length > 0) {
             for (const picToRemove of picsToRemove) {
                 picToRemove.style.opacity = 0;
@@ -122,7 +121,6 @@ export function setupNavigation(productGrid) {
     };
 
     const changeProduct = ({ currentId, prevId }) => {
-        console.log(currentId, prevId);
         rotateCarousel(currentId);
         changeDisplay({ currentId, prevId });
         changeInfo(currentId);
@@ -138,7 +136,6 @@ export function setupNavigation(productGrid) {
                 currentId,
                 prevId,
             });
-            console.log(currentProductId);
         } else {
             const prevId = currentProductId;
             const currentId = (currentProductId = 0);
@@ -146,7 +143,6 @@ export function setupNavigation(productGrid) {
                 currentId,
                 prevId,
             });
-            console.log(currentProductId);
         }
     };
     const handlePrevious = () => {
