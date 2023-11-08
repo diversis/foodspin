@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-in {
+    animation: fade-in #{$base-transition};
+}
+
+.fade-out {
+    animation: fade-out #{$base-transition};
+}

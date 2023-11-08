@@ -1,57 +1,62 @@
 @use "../abstracts" as *;
 
+:root {
+    --theme-button: #{map-get($base-colors, "primary")};
+    --theme-bg: #{map-get($base-colors, "primary")};
+}
+
 body {
-	position: relative;
-	width: 100%;
-	min-height: 100vh;
-	max-width: 100%;
-	overflow-x: hidden;
-	overflow-y: auto;
-	display: flex;
-	flex-direction: column;
-	justify-items: space-between;
-	font-family: $base-font-family;
-	color: map-get($base-colors, "text");
-	background-color: map-get($base-colors, "white");
-	text-align: $base-text-align;
-	line-height: 1.5;
-	overflow-y: auto;
-	overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: space-between;
+    font-family: $base-font-family;
+    color: map-get($base-colors, "text");
+    background-color: map-get($base-colors, "white");
+    text-align: $base-text-align;
+    line-height: 1.5;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 main {
-	position: relative;
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr;
-	justify-items: center;
-	margin-top: 3rem;
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 3rem;
 }
 
 /* custom scrollbar */
 
 ::-webkit-scrollbar {
-	width: min(0.5rem, 0.5vw);
-	/* min-width: 100%; */
+    width: min(0.5rem, 0.5vw);
+    /* min-width: 100%; */
 }
 
 ::-webkit-scrollbar-track {
-	background-color: map-get($base-colors, "secondary");
+    background-color: map-get($base-colors, "secondary");
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: map-get($base-colors, "primary");
-	background-image: linear-gradient(
-		to bottom,
-		map-get($base-colors, "primary") 0%,
-		map-get($base-colors, "warning") 100%
-	);
-	border-radius: 9999px;
+    background-color: map-get($base-colors, "primary");
+    background-image: linear-gradient(
+        to bottom,
+        map-get($base-colors, "primary") 0%,
+        map-get($base-colors, "warning") 100%
+    );
+    border-radius: 9999px;
 }
 /* purgecss ignore */
 a {
-	transition: $base-transition;
-	&:is(:hover, :focus-within) {
-		color: map-get($base-colors, "primary");
-	}
+    transition: $base-transition;
+    &:is(:hover, :focus-within) {
+        color: map-get($base-colors, "primary");
+    }
 }

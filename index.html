@@ -38,21 +38,30 @@
         </header>
         <main class="flex-grow">
             <section class="container spin-container grid">
-                <div class="grid grid-product">
-                    <article class="grid content-product">
+                <div
+                    id="grid-product"
+                    class="grid grid-product"
+                >
+                    <article
+                        id="product-current-info"
+                        class="grid content-product"
+                    >
                         <p
+                            id="product-price"
                             tabindex="0"
                             class="text-primary text-h1 font-600"
                         >
                             $32
                         </p>
                         <h2
+                            id="product-name"
                             tabindex="0"
                             class="text-h2 leading-h"
                         >
                             Green Goddess Chicken Salad
                         </h2>
                         <p
+                            id="product-description"
                             tabindex="0"
                             class="text-capitalize mt-3"
                         >
@@ -143,20 +152,29 @@
                     <div class="content-order mt-7">
                         <button
                             type="button"
-                            class="btn-primary btn-order shadow-primary"
+                            role="button"
+                            class="btn-theme btn-order shadow"
                         >
                             order now
                         </button>
                     </div>
-                    <picture class="product-picture"
-                        ><img
-                            alt="Green Goddess Chicken Salad"
-                            src="/img/1/768.webp"
-                    /></picture>
+                    <div
+                        id="product-display"
+                        class="product-display-wrapper"
+                    >
+                        <picture class="product-picture"
+                            ><img
+                                alt="Green Goddess Chicken Salad"
+                                src="/img/1/768.webp"
+                        /></picture>
+                    </div>
 
                     <div class="spin-nav">
                         <button
-                            class="btn-round-primary btn-round-icon"
+                            id="button-previous"
+                            type="button"
+                            role="button"
+                            class="btn-round-theme btn-round-icon"
                         >
                             <svg
                                 width="12"
@@ -170,7 +188,10 @@
                             </svg>
                         </button>
                         <button
-                            class="btn-round-primary btn-round-icon"
+                            id="button-next"
+                            type="button"
+                            role="button"
+                            class="btn-round-theme btn-round-icon"
                         >
                             <svg
                                 width="12"

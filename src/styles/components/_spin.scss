@@ -41,6 +41,8 @@
     place-items: center;
     bottom: -25%;
     aspect-ratio: 1/1;
+    transform: rotate(calc(var(--product-id) * 40deg));
+    transition: $base-transition;
     &::before {
         position: absolute;
         content: "";
