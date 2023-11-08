@@ -2,7 +2,8 @@
 
 :root {
     --theme-button: #{map-get($base-colors, "primary")};
-    --theme-bg: #{map-get($base-colors, "primary")};
+    --theme-bg: #{map-get($base-colors, "primary-light")};
+    --product-id: 0;
 }
 
 body {

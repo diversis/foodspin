@@ -1,5 +1,5 @@
 @use "../abstracts" as *;
-
+/* purgecss start ignore */
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -20,10 +20,43 @@
     }
 }
 
+@keyframes rotate-cw {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-90deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate-ccw {
+    0% {
+        opacity: 1;
+        transform: scale(1) rotate(90deg);
+    }
+
+    100% {
+        transform: scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+}
+
 .fade-in {
-    animation: fade-in #{$base-transition};
+    animation: fade-in #{$base-animation-transition};
 }
 
 .fade-out {
-    animation: fade-out #{$base-transition};
+    animation: fade-out #{$base-animation-transition};
 }
+
+.rotate-cw {
+    animation: rotate-cw #{$base-animation-transition-long};
+}
+
+.rotate-ccw {
+    animation: rotate-ccw #{$base-animation-transition};
+}
+/* purgecss end ignore */

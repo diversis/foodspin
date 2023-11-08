@@ -74,46 +74,96 @@ export function setupNavigation(productGrid) {
             currentProduct.description;
     };
 
-    const changeDisplay = (currentId) => {
-        const picToRemove =
-            productDisplay.querySelector("picture");
-        console.log(picToRemove);
-        if (picToRemove) {
-            picToRemove.style.opacity = 0;
-            picToRemove.style.transform = `rotate(-${
-                currentId * 40
-            }deg,)`;
-            picToRemove.addEventListener(
-                "transitionend",
-                picToRemove.remove(),
+    const changeDisplay = ({ currentId, prevId }) => {
+        // console.log(currentId);
+        // TODO proper query based on id
+        const picsToRemove =
+            productDisplay.querySelectorAll(
+                `#product-display-${prevId}`,
             );
+        // console.log(picToRemove);
+        if (picsToRemove && picsToRemove.length > 0) {
+            for (const picToRemove of picsToRemove) {
+                picToRemove.style.opacity = 0;
+                picToRemove.style.transform = `rotate(-${
+                    currentId * 40
+                }deg,)`;
+                picToRemove.classList.replace(
+                    "rotate-cw",
+                    "rotate-ccw",
+                );
+
+                const handleAnimationEnd = (event) => {
+                    picToRemove.style.display = "none";
+                    picToRemove.removeEventListener(
+                        "animationend",
+                        handleAnimationEnd,
+                    );
+                    picToRemove.remove();
+                };
+
+                picToRemove.addEventListener(
+                    "animationend",
+                    (event) => {
+                        handleAnimationEnd(event);
+                    },
+                );
+            }
         }
         const currentPic =
             document.createElement("picture");
-        currentPic.className = "product-picture";
+        currentPic.className = "product-picture rotate-cw";
+        currentPic.id = `product-display-${currentId}`;
         const currentImg = document.createElement("img");
-        currentPic.appendChild(currentImg);
-        console.log(currentPic);
+        currentPic.append(currentImg);
         currentImg.alt = products[currentId % 2].name;
         currentImg.src = `/img/${currentId + 1}/768.webp`;
-        productDisplay.appendChild(currentPic);
+        productDisplay.append(currentPic);
     };
 
-    const changeProduct = async (currentId) => {
+    const changeProduct = ({ currentId, prevId }) => {
+        console.log(currentId, prevId);
         rotateCarousel(currentId);
-        changeDisplay(currentId);
+        changeDisplay({ currentId, prevId });
         changeInfo(currentId);
         changeTheme(currentId);
+        currentProductId = currentId;
     };
 
-    const handleNext = async () => {
-        if (currentProductId < 9) {
-            changeProduct(++currentProductId);
+    const handleNext = () => {
+        if (currentProductId < 4) {
+            const prevId = currentProductId;
+            const currentId = currentProductId + 1;
+            changeProduct({
+                currentId,
+                prevId,
+            });
+            console.log(currentProductId);
+        } else {
+            const prevId = currentProductId;
+            const currentId = (currentProductId = 0);
+            changeProduct({
+                currentId,
+                prevId,
+            });
+            console.log(currentProductId);
         }
     };
-    const handlePrevious = async () => {
+    const handlePrevious = () => {
         if (currentProductId > 0) {
-            changeProduct(--currentProductId);
+            const prevId = currentProductId;
+            const currentId = currentProductId - 1;
+            changeProduct({
+                currentId,
+                prevId,
+            });
+        } else {
+            const prevId = currentProductId;
+            const currentId = (currentProductId = 4);
+            changeProduct({
+                currentId,
+                prevId,
+            });
         }
     };
 

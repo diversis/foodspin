@@ -8,16 +8,10 @@ $base-border-radius: 0.5rem;
 $base-heading-leading: 1.3889;
 $base-leading: 1.5;
 
-$base-transition: 0.2s ease-in-out;
-$base-transition-delay: 0.2s;
-$base-transition-duration: 0.2s;
-$base-transition-property: all;
-$base-transition-timing-function: ease-in-out;
-$base-transition-transform: 0.2s ease-in-out;
-$base-transition-transform-delay: 0.2s;
-$base-transition-transform-duration: 0.2s;
-$base-transition-transform-property: all;
-$base-transition-transform-timing-function: ease-in-out;
+$base-transition: all 0.2s ease-in-out;
+$base-animation-transition: 0.4s ease-in-out;
+$base-transition-long: all 0.4s ease-in-out;
+$base-animation-transition-long: 0.6s ease-in-out;
 
 $base-directions: (
     "simple": (
