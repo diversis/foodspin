@@ -27,7 +27,7 @@
     }
 }
 
-.product-display-wrapper {
+.product-display__wrapper {
     align-self: flex-end;
     position: relative;
     grid-area: 1/2/4/3;
@@ -52,7 +52,7 @@
     }
 }
 
-.product-variant-picture {
+.product-variant__picture {
     position: relative;
     grid-area: 1/2/4/3;
     justify-self: center;
