@@ -1,4 +1,4 @@
-const currentProductId = 0;
+let currentProductId = 0;
 
 export const getCurrentProductId = () => currentProductId;
 

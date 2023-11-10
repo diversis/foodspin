@@ -3,7 +3,7 @@ import {
     setCurrentProductId,
 } from "@/lib/currentProduct";
 
-export const setupNextButton = () => {
+export const setupNextButton = ({ changeProduct }) => {
     const nextButton = document.querySelector(
         "#spin-nav #button-next",
     );

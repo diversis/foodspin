@@ -33,9 +33,11 @@
 }
 
 .btn-order {
+    width: fit-content;
     text-transform: uppercase;
     color: #fff;
     font-weight: 700;
+    grid-area: button;
     @include btn(var(--theme-button));
     @include btn-state(var(--theme-button));
 }

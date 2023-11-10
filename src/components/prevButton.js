@@ -3,7 +3,7 @@ import {
     setCurrentProductId,
 } from "@/lib/currentProduct";
 
-export const setupPrevButton = () => {
+export const setupPrevButton = ({ changeProduct }) => {
     const prevButton = document.querySelector(
         "#spin-nav #button-previous",
     );

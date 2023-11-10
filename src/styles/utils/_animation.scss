@@ -35,21 +35,21 @@
 @keyframes rotate-ccw {
     0% {
         opacity: 1;
-        transform: scale(1) rotate(90deg);
+        transform: scale(1) rotate(0deg);
     }
 
     100% {
-        transform: scale(0.5) rotate(0deg);
+        transform: scale(0.5) rotate(90deg);
         opacity: 0;
     }
 }
 
 .fade-in {
-    animation: fade-in #{$base-animation-transition};
+    animation: fade-in #{$base-animation-transition-long};
 }
 
 .fade-out {
-    animation: fade-out #{$base-animation-transition};
+    animation: fade-out #{$base-animation-transition-long};
 }
 
 .rotate-cw {

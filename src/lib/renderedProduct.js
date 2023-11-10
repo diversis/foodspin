@@ -1,4 +1,4 @@
-const renderedProductKey = 0;
+let renderedProductKey = 0;
 
 export const getRenderedProductKey = () =>
     renderedProductKey;
