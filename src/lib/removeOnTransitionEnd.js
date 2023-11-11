@@ -17,6 +17,7 @@ export const removeOnTransitionEnd = ({
     element,
     eventType = "transition",
 }) => {
+    console.log("add listener...", element);
     element.addEventListener(
         eventType === "animation"
             ? "animationend"

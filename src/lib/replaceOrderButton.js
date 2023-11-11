@@ -1,6 +1,7 @@
 import { removeOnTransitionEnd } from "./removeOnTransitionEnd";
 
 export const replaceOrderButton = async ({
+    currentId,
     renderedProductKey,
     oldProductKey,
 }) => {
@@ -12,8 +13,11 @@ export const replaceOrderButton = async ({
             `#order-button-${oldProductKey}`,
         );
         const newButton = oldButton.cloneNode(true);
-        oldButton.style.transform = "scale(0.5)";
-        oldButton.classList.replace("fade-in", "fade-out");
+        // oldButton.style.transform = "scale(0.5)";
+        oldButton.classList.replace(
+            "fade-in-left",
+            "fade-out-right",
+        );
         removeOnTransitionEnd({
             element: oldButton,
             eventType: "animation",
@@ -21,8 +25,11 @@ export const replaceOrderButton = async ({
 
         newButton.id = `order-button-${renderedProductKey}`;
         newButton.style.transform = "";
-        newButton.className =
-            "btn-theme btn-order shadow fade-in";
+        newButton.className = `${
+            currentId % 2 === 0
+                ? "btn-primary"
+                : "btn-secondary"
+        } btn-order shadow fade-in-left`;
         buttonDiv.append(newButton);
     } catch (e) {
         console.log(e);

@@ -8,20 +8,18 @@ export const changeProductInfo = ({
     oldProductKey,
 }) => {
     try {
-        const oldProductDetails = document.querySelector(
-            `#product-details-${oldProductKey}`,
+        const productDetails = productGrid.querySelector(
+            `#product-details`,
         );
-        const productPrice =
-            oldProductDetails.querySelector(
-                `#product-price`,
-            );
-        const productName =
-            oldProductDetails.querySelector(
-                `#product-name`,
-            );
+        const productPrice = productGrid.querySelector(
+            `#product-price-${oldProductKey}`,
+        );
+        const productName = productGrid.querySelector(
+            `#product-name-${oldProductKey}`,
+        );
         const productDescription =
-            oldProductDetails.querySelector(
-                `#product-description`,
+            productGrid.querySelector(
+                `#product-description-${oldProductKey}`,
             );
         // Animate old product data removal
         for (const element of [
@@ -29,53 +27,44 @@ export const changeProductInfo = ({
             productName,
             productDescription,
         ]) {
-            element.style.transform = "scale(0.5)";
+            element.classList.replace(
+                "fade-in-scale",
+                "fade-out-scale",
+            );
+            removeOnTransitionEnd({
+                element,
+                eventType: "animation",
+            });
         }
-        oldProductDetails.classList.replace(
-            "fade-in",
-            "fade-out",
-        );
-        removeOnTransitionEnd({
-            element: oldProductDetails,
-            eventType: "animation",
-        });
 
         // Add new product data
-        const currentProductDetails =
-            document.createElement("article");
-        currentProductDetails.id = `product-details-${renderedProductKey}`;
-        currentProductDetails.className =
-            "grid product-details fade-in";
-
         const currentProductPrice =
             document.createElement("p");
         currentProductPrice.className =
-            "text-primary text-h1 font-600";
-        currentProductPrice.id = `product-price`;
+            "product-price fade-in-scale";
+        currentProductPrice.id = `product-price-${renderedProductKey}`;
         currentProductPrice.innerText =
             products[currentId % 2].price;
-        currentProductDetails.append(currentProductPrice);
+        productDetails.append(currentProductPrice);
 
         const currentProductName =
             document.createElement("h2");
-        currentProductName.className = "text-h2 leading-h";
-        currentProductName.id = `product-name`;
+        currentProductName.className =
+            "product-name fade-in-scale";
+        currentProductName.id = `product-name-${renderedProductKey}`;
         currentProductName.innerText =
             products[currentId % 2].name;
-        currentProductDetails.append(currentProductName);
+        productDetails.append(currentProductName);
 
         const currentProductDescription =
             document.createElement("p");
         currentProductDescription.className =
-            "text-capitalize mt-3";
-        currentProductDescription.id = `product-description`;
+            "product-description fade-in-scale";
+        currentProductDescription.id = `product-description-${renderedProductKey}`;
         currentProductDescription.innerText =
             products[currentId % 2].description;
-        currentProductDetails.append(
-            currentProductDescription,
-        );
+        productDetails.append(currentProductDescription);
         // console.log(currentProductDetails);
-        productGrid.prepend(currentProductDetails);
     } catch (e) {
         console.log(e);
     }

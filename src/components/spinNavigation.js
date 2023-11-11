@@ -34,6 +34,7 @@ export function setupNavigation(productGrid) {
         });
         changeTheme({ currentId, productGrid });
         replaceOrderButton({
+            currentId,
             renderedProductKey,
             oldProductKey,
         });

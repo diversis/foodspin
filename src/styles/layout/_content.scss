@@ -1,9 +1,10 @@
 @use "../abstracts" as *;
 .product-details {
     grid-area: 1/1/2/2;
-    place-items: start;
-    & > * {
-        place-self: start;
+    display: grid;
+    grid-template-areas: "price" "name" "description";
+    & > :is(p, h2) {
+        transform-origin: top left;
         transition: $base-transition-long;
     }
 }
@@ -83,4 +84,23 @@
         border-radius: 50%;
         box-shadow: $shadow-round;
     }
+}
+
+.product-price {
+    grid-area: price;
+    color: var(--theme-clr);
+    font-size: map-get($heading-sizes, "h1");
+    font-weight: 600;
+}
+
+.product-name {
+    grid-area: name;
+    font-size: map-get($heading-sizes, "h2");
+    line-height: $base-heading-leading;
+}
+// text-capitalize mt-3
+.product-description {
+    grid-area: description;
+    margin-top: $base-margin * 3;
+    text-decoration: capitalize;
 }

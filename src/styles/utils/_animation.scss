@@ -10,12 +10,60 @@
     }
 }
 
+@keyframes fade-in-scale {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-left {
+    0% {
+        // opacity: 0;
+        mask-position: 200% 50%;
+    }
+
+    100% {
+        // opacity: 1;
+        mask-position: 0% 50%;
+    }
+}
+
+@keyframes fade-out-right {
+    0% {
+        // opacity: 1;
+        mask-position: 0% 50%;
+    }
+
+    100% {
+        // opacity: 0;
+        mask-position: 200% 50%;
+    }
+}
+
 @keyframes fade-out {
     0% {
         opacity: 1;
     }
 
     100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out-scale {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.5);
         opacity: 0;
     }
 }
@@ -45,18 +93,54 @@
 }
 
 .fade-in {
-    animation: fade-in #{$base-animation-transition-long};
+    animation: fade-in #{$base-animation-transition-long} forwards;
+}
+.fade-in-scale {
+    transform: scale(0.5);
+    opacity: 0;
+    animation: fade-in-scale #{$base-animation-transition-long}
+        0.3s forwards;
+}
+
+.fade-in-left {
+    mask-image: radial-gradient(
+        circle at 0% 50%,
+        black 0%,
+        black 75%,
+        transparent 100%
+    );
+    mask-size: 200% 200%;
+    mask-repeat: no-repeat;
+    animation: fade-in-left #{$base-animation-transition-long}
+        forwards;
 }
 
 .fade-out {
-    animation: fade-out #{$base-animation-transition-long};
+    animation: fade-out #{$base-animation-transition-long} forwards;
+}
+.fade-out-scale {
+    animation: fade-out-scale #{$base-animation-transition-long}
+        forwards;
+}
+
+.fade-out-right {
+    mask-image: radial-gradient(
+        circle at 0% 50%,
+        black 0%,
+        black 50%,
+        transparent 100%
+    );
+    mask-size: 200% 200%;
+    mask-repeat: no-repeat;
+    animation: fade-out-right #{$base-animation-transition-long}
+        forwards;
 }
 
 .rotate-cw {
-    animation: rotate-cw #{$base-animation-transition-long};
+    animation: rotate-cw #{$base-animation-transition-long} forwards;
 }
 
 .rotate-ccw {
-    animation: rotate-ccw #{$base-animation-transition};
+    animation: rotate-ccw #{$base-animation-transition} forwards;
 }
 /* purgecss end ignore */

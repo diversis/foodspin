@@ -14,6 +14,6 @@ export const products = [
 ];
 
 export const themes = [
-    { button: "#ff922c", bg: "#ffeede" },
-    { button: "#54bf29", bg: "#eaffe2" },
+    { clr: "#ff922c", bg: "#ffeede" },
+    { clr: "#54bf29", bg: "#eaffe2" },
 ];
