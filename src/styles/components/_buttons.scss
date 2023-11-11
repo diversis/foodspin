@@ -8,7 +8,7 @@
     @include btn-round;
     @include btn-state;
 }
-
+/* purgecss start ignore */
 @each $name, $color in $base-colors {
     .btn-#{$name} {
         @include btn($color);
@@ -31,7 +31,7 @@
         border: $base-border solid $color;
     }
 }
-
+/* purgecss end ignore */
 .btn-order {
     width: fit-content;
     text-transform: uppercase;

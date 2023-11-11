@@ -1,33 +1,33 @@
 {
-	"name": "sass-template-0",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
-		"build-sass": "sass ./src/styles/index.scss index.css",
-		"watch-sass": "sass -w ./src/styles/index.scss index.css"
-	},
-	"keywords": [],
-	"author": "diversis",
-	"license": "ISC",
-	"devDependencies": {
-		"@csstools/normalize.css": "^12.0.0",
-		"@fullhuman/postcss-purgecss": "^5.0.0",
-		"autoprefixer": "^10.4.16",
-		"cssnano": "^6.0.1",
-		"postcss": "^8.4.31",
-		"postcss-normalize": "^10.0.1",
-		"sass": "^1.69.4",
-		"stylelint": "^15.11.0",
-		"vite": "^4.5.0"
-	},
-	"browserslist": [
-		">0.3%",
-		"defaults",
-		"fully supports es6-module",
-		"maintained node versions"
-	]
+    "name": "foodspin",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "build-sass": "sass ./src/styles/index.scss index.css",
+        "watch-sass": "sass -w ./src/styles/index.scss index.css"
+    },
+    "keywords": [],
+    "author": "diversis",
+    "license": "ISC",
+    "devDependencies": {
+        "@csstools/normalize.css": "^12.0.0",
+        "@fullhuman/postcss-purgecss": "^5.0.0",
+        "autoprefixer": "^10.4.16",
+        "cssnano": "^6.0.1",
+        "postcss": "^8.4.31",
+        "postcss-normalize": "^10.0.1",
+        "sass": "^1.69.4",
+        "stylelint": "^15.11.0",
+        "vite": "^4.5.0"
+    },
+    "browserslist": [
+        ">0.3%",
+        "defaults",
+        "fully supports es6-module",
+        "maintained node versions"
+    ]
 }
