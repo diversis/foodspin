@@ -3,21 +3,24 @@ const handleAnimationEnd = ({
     element,
     eventType,
 }) => {
-    element.style.display = "none";
-    element.removeEventListener(
-        eventType === "animation"
-            ? "animationend"
-            : "transitionend",
-        handleAnimationEnd,
-    );
-    element.remove();
+    try {
+        element.style.display = "none";
+        element.removeEventListener(
+            eventType === "animation"
+                ? "animationend"
+                : "transitionend",
+            handleAnimationEnd,
+        );
+        element.remove();
+    } catch (e) {
+        console.log(e);
+    }
 };
 
 export const removeOnTransitionEnd = ({
     element,
     eventType = "transition",
 }) => {
-    console.log("add listener...", element);
     element.addEventListener(
         eventType === "animation"
             ? "animationend"

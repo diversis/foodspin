@@ -1,4 +1,3 @@
-// import { products, themes } from "@/lib/constants";
 import { changeTheme } from "../lib/changeTheme";
 import {
     getRenderedProductKey,
@@ -13,34 +12,40 @@ import { rotateCarousel } from "@/lib/rotateCarousel";
 import { replaceOrderButton } from "@/lib/replaceOrderButton";
 
 export function setupNavigation(productGrid) {
-    // change product
-
-    const changeProduct = async ({ currentId, prevId }) => {
-        const oldProductKey = getRenderedProductKey();
-        await setRenderedProductKey(Date.now());
-        const renderedProductKey = getRenderedProductKey();
-
-        rotateCarousel({ productGrid, currentId });
-        changeProductImage({
+    try {
+        const changeProduct = async ({
             currentId,
-            renderedProductKey,
-            oldProductKey,
-        });
-        changeProductInfo({
-            productGrid,
-            currentId,
-            renderedProductKey,
-            oldProductKey,
-        });
-        changeTheme({ currentId, productGrid });
-        replaceOrderButton({
-            currentId,
-            renderedProductKey,
-            oldProductKey,
-        });
-        setCurrentProductId(currentId);
-    };
+            prevId,
+        }) => {
+            const oldProductKey = getRenderedProductKey();
+            await setRenderedProductKey(Date.now());
+            const renderedProductKey =
+                getRenderedProductKey();
 
-    setupNextButton({ changeProduct });
-    setupPrevButton({ changeProduct });
+            rotateCarousel({ productGrid, currentId });
+            changeProductImage({
+                currentId,
+                renderedProductKey,
+                oldProductKey,
+            });
+            changeProductInfo({
+                productGrid,
+                currentId,
+                renderedProductKey,
+                oldProductKey,
+            });
+            changeTheme({ currentId, productGrid });
+            replaceOrderButton({
+                currentId,
+                renderedProductKey,
+                oldProductKey,
+            });
+            setCurrentProductId(currentId);
+        };
+
+        setupNextButton({ changeProduct });
+        setupPrevButton({ changeProduct });
+    } catch (e) {
+        console.log(e);
+    }
 }

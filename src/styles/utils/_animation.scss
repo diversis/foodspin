@@ -98,8 +98,8 @@
 .fade-in-scale {
     transform: scale(0.5);
     opacity: 0;
-    animation: fade-in-scale #{$base-animation-transition-long}
-        0.3s forwards;
+    animation: fade-in-scale #{$base-animation-transition} 0.2s
+        forwards;
 }
 
 .fade-in-left {
@@ -119,8 +119,7 @@
     animation: fade-out #{$base-animation-transition-long} forwards;
 }
 .fade-out-scale {
-    animation: fade-out-scale #{$base-animation-transition-long}
-        forwards;
+    animation: fade-out-scale #{$base-animation-transition} forwards;
 }
 
 .fade-out-right {

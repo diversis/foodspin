@@ -4,29 +4,33 @@ import {
 } from "@/lib/currentProduct";
 
 export const setupPrevButton = ({ changeProduct }) => {
-    const prevButton = document.querySelector(
-        "#spin-nav #button-previous",
-    );
+    try {
+        const prevButton = document.querySelector(
+            "#spin-nav #button-previous",
+        );
 
-    const handlePrev = () => {
-        const currentProductId = getCurrentProductId();
-        if (currentProductId > 0) {
-            const prevId = currentProductId;
-            const currentId = currentProductId - 1;
-            changeProduct({
-                currentId,
-                prevId,
-            });
-        } else {
-            const prevId = currentProductId;
-            setCurrentProductId(4);
-            const currentId = 4;
-            changeProduct({
-                currentId,
-                prevId,
-            });
-        }
-    };
+        const handlePrev = () => {
+            const currentProductId = getCurrentProductId();
+            if (currentProductId > 0) {
+                const prevId = currentProductId;
+                const currentId = currentProductId - 1;
+                changeProduct({
+                    currentId,
+                    prevId,
+                });
+            } else {
+                const prevId = currentProductId;
+                setCurrentProductId(4);
+                const currentId = 4;
+                changeProduct({
+                    currentId,
+                    prevId,
+                });
+            }
+        };
 
-    prevButton.addEventListener("click", handlePrev);
+        prevButton.addEventListener("click", handlePrev);
+    } catch (e) {
+        console.log(e);
+    }
 };

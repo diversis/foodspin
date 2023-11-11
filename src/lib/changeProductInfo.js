@@ -64,7 +64,6 @@ export const changeProductInfo = ({
         currentProductDescription.innerText =
             products[currentId % 2].description;
         productDetails.append(currentProductDescription);
-        // console.log(currentProductDetails);
     } catch (e) {
         console.log(e);
     }

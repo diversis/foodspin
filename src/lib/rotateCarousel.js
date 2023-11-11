@@ -2,10 +2,12 @@ export const rotateCarousel = ({
     productGrid,
     currentId,
 }) => {
-    // rotate carousel with
-    // .spin-variants {transform: rotate(calc(var(--product-id) * -40deg));}
-    productGrid.style.setProperty(
-        "--product-id",
-        currentId,
-    );
+    try {
+        productGrid.style.setProperty(
+            "--product-id",
+            currentId,
+        );
+    } catch (e) {
+        console.log(e);
+    }
 };
