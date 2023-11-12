@@ -3,6 +3,9 @@
     grid-area: 1/1/2/2;
     display: grid;
     grid-template-areas: "price" "name" "description";
+    grid-template-rows: map-get($heading-sizes, "h1") * $base-line-height 100px calc(
+            1em * $base-line-height * 3 + 0.75rem
+        );
     & > :is(p, h2) {
         transform-origin: top left;
         transition: $base-transition-long;
