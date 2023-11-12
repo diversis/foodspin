@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 6px;
+}

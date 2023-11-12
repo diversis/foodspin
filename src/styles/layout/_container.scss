@@ -1,33 +1,33 @@
 @use "../abstracts" as *;
 
 .container {
-	width: 100%;
-	padding-inline: $base-container-padding * 0.25;
-	main & {
-		margin-top: 10.25rem;
-	}
-	@include xs {
-		max-width: map-get($base-breakpoints, "xs");
-		padding-inline: $base-container-padding * 0.5;
-	}
-	@include sm {
-		max-width: map-get($base-breakpoints, "sm");
-		padding-inline: $base-container-padding;
-	}
-	@include md {
-		max-width: map-get($base-breakpoints, "md");
-		padding-inline: $base-container-padding * 1.5;
-	}
-	@include lg {
-		max-width: map-get($base-breakpoints, "lg");
-		padding-inline: $base-container-padding * 2;
-	}
-	@include xl {
-		max-width: map-get($base-breakpoints, "xl");
-		padding-inline: $base-container-padding * 4;
-	}
-	@include xxl {
-		max-width: map-get($base-breakpoints, "xxl");
-		padding-inline: $base-container-padding * 6;
-	}
+    width: 100%;
+    padding-inline: $base-container-padding * 0.25;
+    main & {
+        margin-top: 13.25rem;
+    }
+    @include xs {
+        max-width: map-get($base-breakpoints, "xs");
+        padding-inline: $base-container-padding * 0.5;
+    }
+    @include sm {
+        max-width: map-get($base-breakpoints, "sm");
+        padding-inline: $base-container-padding;
+    }
+    @include md {
+        max-width: map-get($base-breakpoints, "md");
+        padding-inline: $base-container-padding * 1.5;
+    }
+    @include lg {
+        max-width: map-get($base-breakpoints, "lg");
+        padding-inline: $base-container-padding * 2;
+    }
+    @include xl {
+        max-width: map-get($base-breakpoints, "xl");
+        padding-inline: $base-container-padding * 4;
+    }
+    @include xxl {
+        max-width: map-get($base-breakpoints, "xxl");
+        padding-inline: $base-container-padding * 6;
+    }
 }

@@ -1,37 +1,37 @@
 @use "../abstracts" as *;
 
 $align-items: (
-	"auto": auto,
-	"center": center,
-	"normal": normal,
-	"start": flex-start,
-	"end": flex-end,
-	"stretch": stretch,
-	"baseline": baseline,
+    "auto": auto,
+    "center": center,
+    "normal": normal,
+    "start": flex-start,
+    "end": flex-end,
+    "stretch": stretch,
+    "baseline": baseline,
 );
 
 $place-items: (
-	"center": center,
-	"start": start,
-	"end": end,
-	"stretch": stretch,
-	"baseline": baseline,
+    "center": center,
+    "start": start,
+    "end": end,
+    "stretch": stretch,
+    "baseline": baseline,
 );
 
 $justify-items: (
-	"auto": auto,
-	"center": center,
-	"normal": normal,
-	"start": flex-start,
-	"end": flex-end,
-	"stretch": stretch,
-	"baseline": baseline,
+    "auto": auto,
+    "center": center,
+    "normal": normal,
+    "start": flex-start,
+    "end": flex-end,
+    "stretch": stretch,
+    "baseline": baseline,
 );
 
 $content-map: (
-	"between": space-between,
-	"around": space-around,
-	"evenly": space-evenly,
+    "between": space-between,
+    "around": space-around,
+    "evenly": space-evenly,
 );
 
 $align-content: map-merge($align-items, $content-map);
@@ -41,85 +41,91 @@ $place-content: map-merge($place-items, $content-map);
 $justify-content: map-merge($justify-items, $content-map);
 
 $place-self: map-merge(
-	map-remove($place-items, "baseline"),
-	(
-		"auto": "auto",
-	)
+    map-remove($place-items, "baseline"),
+    (
+        "auto": "auto",
+    )
 );
 
 @each $key, $value in $align-items {
-	.items-#{$key} {
-		align-items: $value;
-	}
+    .items-#{$key} {
+        align-items: $value;
+    }
 }
 
 @each $key, $value in $place-items {
-	.place-items-#{$key} {
-		place-items: $value;
-	}
+    .place-items-#{$key} {
+        place-items: $value;
+    }
 }
 
 @each $key, $value in $place-content {
-	.place-content-#{$key} {
-		place-content: $value;
-	}
+    .place-content-#{$key} {
+        place-content: $value;
+    }
+}
+
+@each $key, $value in $justify-content {
+    .justify-content-#{$key} {
+        justify-content: $value;
+    }
 }
 
 @each $bp, $size in $base-breakpoints {
-	@include breakpoint($size) {
-		//self
-		@each $key, $value in $align-items {
-			.#{$bp}\:self-#{$key} {
-				align-self: $value;
-			}
-		}
+    @include breakpoint($size) {
+        //self
+        @each $key, $value in $align-items {
+            .#{$bp}\:self-#{$key} {
+                align-self: $value;
+            }
+        }
 
-		@each $key, $value in $place-items {
-			.#{$bp}\:place-self-#{$key} {
-				place-self: $value;
-			}
-		}
+        @each $key, $value in $place-items {
+            .#{$bp}\:place-self-#{$key} {
+                place-self: $value;
+            }
+        }
 
-		@each $key, $value in $justify-items {
-			.#{$bp}\:justify-self-#{$key} {
-				justify-self: $value;
-			}
-		}
-		//items
-		@each $key, $value in $align-items {
-			.#{$bp}\:items-#{$key} {
-				align-items: $value;
-			}
-		}
+        @each $key, $value in $justify-items {
+            .#{$bp}\:justify-self-#{$key} {
+                justify-self: $value;
+            }
+        }
+        //items
+        @each $key, $value in $align-items {
+            .#{$bp}\:items-#{$key} {
+                align-items: $value;
+            }
+        }
 
-		@each $key, $value in $place-items {
-			.#{$bp}\:place-items-#{$key} {
-				place-items: $value;
-			}
-		}
+        @each $key, $value in $place-items {
+            .#{$bp}\:place-items-#{$key} {
+                place-items: $value;
+            }
+        }
 
-		@each $key, $value in $justify-items {
-			.#{$bp}\:justify-items-#{$key} {
-				justify-items: $value;
-			}
-		}
-		// content
-		@each $key, $value in $place-content {
-			.#{$bp}\:place-content-#{$key} {
-				place-content: $value;
-			}
-		}
+        @each $key, $value in $justify-items {
+            .#{$bp}\:justify-items-#{$key} {
+                justify-items: $value;
+            }
+        }
+        // content
+        @each $key, $value in $place-content {
+            .#{$bp}\:place-content-#{$key} {
+                place-content: $value;
+            }
+        }
 
-		@each $key, $value in $align-content {
-			.#{$bp}\:align-content-#{$key} {
-				align-content: $value;
-			}
-		}
+        @each $key, $value in $align-content {
+            .#{$bp}\:align-content-#{$key} {
+                align-content: $value;
+            }
+        }
 
-		@each $key, $value in $justify-content {
-			.#{$bp}\:justify-content-#{$key} {
-				justify-content: $value;
-			}
-		}
-	}
+        @each $key, $value in $justify-content {
+            .#{$bp}\:justify-content-#{$key} {
+                justify-content: $value;
+            }
+        }
+    }
 }
