@@ -1,4 +1,4 @@
-export const products = [
+export const PRODUCTS = [
     {
         price: "$32",
         name: "Green Goddess Chicken Salad",
@@ -13,7 +13,9 @@ export const products = [
     },
 ];
 
-export const themes = [
+export const THEMES = [
     { clr: "#ff922c", bg: "#ffeede" },
     { clr: "#54bf29", bg: "#eaffe2" },
 ];
+
+export const DOMAIN = "/foodspin";

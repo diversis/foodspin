@@ -1,4 +1,4 @@
-import { products } from "./constants";
+import { DOMAIN, PRODUCTS } from "./constants";
 import { removeOnTransitionEnd } from "./removeOnTransitionEnd";
 export const changeProductImage = async ({
     currentId,
@@ -36,8 +36,10 @@ export const changeProductImage = async ({
         currentPic.id = `product-display-${renderedProductKey}`;
         const currentImg = document.createElement("img");
         currentPic.append(currentImg);
-        currentImg.alt = products[currentId % 2].name;
-        currentImg.src = `/img/${currentId + 1}/768.webp`;
+        currentImg.alt = PRODUCTS[currentId % 2].name;
+        currentImg.src = `${DOMAIN}/img/${
+            currentId + 1
+        }/768.webp`;
         productDisplay.append(currentPic);
     } catch (e) {
         console.log(e);

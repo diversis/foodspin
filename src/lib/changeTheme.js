@@ -1,7 +1,7 @@
-import { themes } from "./constants";
+import { THEMES } from "./constants";
 
 export const changeTheme = ({ currentId, productGrid }) => {
-    const currentTheme = themes[currentId % 2];
+    const currentTheme = THEMES[currentId % 2];
     try {
         productGrid.style.setProperty(
             "--theme-clr",

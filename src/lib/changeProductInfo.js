@@ -1,4 +1,4 @@
-import { products } from "./constants";
+import { PRODUCTS } from "./constants";
 import { removeOnTransitionEnd } from "./removeOnTransitionEnd";
 
 export const changeProductInfo = ({
@@ -44,7 +44,7 @@ export const changeProductInfo = ({
             "product-price fade-in-scale";
         currentProductPrice.id = `product-price-${renderedProductKey}`;
         currentProductPrice.innerText =
-            products[currentId % 2].price;
+            PRODUCTS[currentId % 2].price;
         productDetails.append(currentProductPrice);
 
         const currentProductName =
@@ -53,7 +53,7 @@ export const changeProductInfo = ({
             "product-name fade-in-scale";
         currentProductName.id = `product-name-${renderedProductKey}`;
         currentProductName.innerText =
-            products[currentId % 2].name;
+            PRODUCTS[currentId % 2].name;
         productDetails.append(currentProductName);
 
         const currentProductDescription =
@@ -62,7 +62,7 @@ export const changeProductInfo = ({
             "product-description fade-in-scale";
         currentProductDescription.id = `product-description-${renderedProductKey}`;
         currentProductDescription.innerText =
-            products[currentId % 2].description;
+            PRODUCTS[currentId % 2].description;
         productDetails.append(currentProductDescription);
     } catch (e) {
         console.log(e);
